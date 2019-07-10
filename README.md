@@ -28,7 +28,13 @@
       }
     }
     ```
-- create the file src/app.js
+- create the file src/app.js and add the class Human
+
+  ```javascript
+    class Human {
+
+    }
+  ```
 
 - Configure npm command and run webpack in package.json
 
@@ -40,3 +46,34 @@
 - in console run...
 
   > npm run build
+
+- Install bable (babel-preset-react to comple jsx)
+
+  > npm i --save-dev babel-core babel-preset-env babel-preset-react babel-loader
+
+- Set .babelrc config
+
+  ```jsx
+    {
+      "presets": [
+        "env",
+        "react"
+      ]
+    }
+  ```
+
+- Add the modules Keys (rules: going to loop, test: every file that ends in js|jsx,exclude: node_modules and use babel-loader)
+
+  ```jsx
+  {
+    module: {
+      rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+        }]
+      }
+  }
+  ```
+
+- compile again npm webpack to see in the app.bundle.js our class human compiled.
