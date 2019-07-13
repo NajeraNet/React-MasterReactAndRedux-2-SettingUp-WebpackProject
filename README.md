@@ -143,3 +143,4 @@
   - Run our server npm.
 
   Check the next link to solve the issues with the babel version and preset ;)
+    - https://stackoverflow.com/questions/47830273/babel-plugin-preset-files-are-not-allowed-to-export-objects-only-functions
