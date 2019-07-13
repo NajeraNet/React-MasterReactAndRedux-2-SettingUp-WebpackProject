@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // set entry direction
@@ -11,6 +12,7 @@ module.exports = {
     filename: 'app.bundle.js'
   },
 
+
   mode: process.env.NODE_ENV || 'development',
 
   module: {
@@ -18,6 +20,16 @@ module.exports = {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       use: ['babel-loader']
-      }]
-    }
+    }]
+  },
+
+  devServer: {
+    contentBase: path.join(__dirname, 'src')
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin ({
+      template: path.join(__dirname, 'src', 'index.html')
+    })
+  ]
 }
