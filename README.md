@@ -116,4 +116,30 @@
     ```
 
     - Run the start server script npm
-    
+
+- Install React and React DOM
+
+  > npm i --save-dev react react-dom
+
+  - Let's to our app.js file and create our first component.
+
+    ```js
+      import React from 'react';
+      import ReactDOM from 'react-dom';
+
+      const App = () => {
+        return <h1>This is the App Component! </h1>;
+      };
+
+      ReactDOM.render(<App />, document.getElementById('root'));
+    ```
+
+  - Create the reference of the component in our html index to wath waths happend
+
+    ```html
+      <div id="root"></div>
+    ```
+
+  - Run our server npm.
+
+  Check the next link to solve the issues with the babel version and preset ;)
